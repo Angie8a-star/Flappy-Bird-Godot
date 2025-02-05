@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://paqf0na8tm26"]
+
+[ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_0pem6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsvtk"]
+size = Vector2(391, 111.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uvue"]
+size = Vector2(406, 20)
+
+[node name="Game" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+position = Vector2(196, 592)
+scale = Vector2(1.16071, 1)
+texture = ExtResource("1_0pem6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(196.5, 592.75)
+shape = SubResource("RectangleShape2D_fsvtk")
+
+[node name="roof" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof"]
+position = Vector2(193, 0)
+shape = SubResource("RectangleShape2D_8uvue")
