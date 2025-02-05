@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1pbkv1hhtuai"]
+
+[ext_resource type="Script" path="res://Script/player.gd" id="1_wo28m"]
+[ext_resource type="Texture2D" uid="uid://b76otw1vipxs3" path="res://FBAssets/FBsprites/bluebird-downflap.png" id="2_4yibx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcwd2"]
+atlas = ExtResource("2_4yibx")
+region = Rect2(0, 0, 34, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf8qa"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcwd2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_upuh7"]
+radius = 12.3693
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4w2l"]
+size = Vector2(33, 25)
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_wo28m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uf8qa")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_upuh7")
+
+[node name="DetectaSuelo" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectaSuelo"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_d4w2l")

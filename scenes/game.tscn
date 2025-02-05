@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://paqf0na8tm26"]
+[gd_scene load_steps=5 format=3 uid="uid://paqf0na8tm26"]
 
 [ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_0pem6"]
+[ext_resource type="PackedScene" uid="uid://d1pbkv1hhtuai" path="res://scenes/player.tscn" id="2_nj4fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsvtk"]
 size = Vector2(391, 111.5)
@@ -26,3 +27,5 @@ shape = SubResource("RectangleShape2D_fsvtk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roof"]
 position = Vector2(193, 0)
 shape = SubResource("RectangleShape2D_8uvue")
+
+[node name="Player" parent="." instance=ExtResource("2_nj4fb")]
